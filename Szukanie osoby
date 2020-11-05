@@ -1,0 +1,12 @@
+#!/bin/bash
+
+zmienna="i"
+while [ "$zmienna" = "i" ]
+do
+
+echo "Podaj imie, nazwisko, lub numer(xxx-xxx-xxx) szukanej osoby"
+read zmienna
+
+grep "$zmienna" dane.txt
+
+done
