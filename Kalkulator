@@ -1,0 +1,52 @@
+#!/bin/bash
+
+if [ "$1" = "-h" ] || [ "$1" = "-?" ]
+then
+
+cat help.txt | less
+
+else
+
+echo "witaj $USER!! w kalkulator"
+sleep 2
+
+zapytanie="t"
+
+while [ "$zapytanie" = "t" ] || [ "$zapytanie" = "tak" ]
+do
+
+clear
+
+echo -e "\nPodaj a:"
+read aa
+
+echo "Podaj znak"
+read znak
+
+echo "podaj b:"
+read bb
+
+case "$znak" in
+        "+") echo "wynik z + wynosi:"
+         echo "scale=2; $aa+$bb" | bc -l;;
+
+        "-") echo "wynik z - wynosi:"
+         echo "scale=2; $aa-$bb" | bc -l;;
+
+        "*") echo "wynik z * wynosi:"
+         echo "scale=2; $aa*$bb" | bc -l;;
+
+        "/") echo "wynik z / wynosi:"
+         echo "scale=2; $aa/$bb" | bc -l;;
+
+        *) echo "zly znak"
+esac
+
+echo "czy chcesz kontynuowac t/n? (tak/nie)"
+read zapytanie
+
+done
+fi
+
+#echo "wynik:"
+
