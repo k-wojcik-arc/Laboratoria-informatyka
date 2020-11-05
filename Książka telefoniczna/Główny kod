@@ -1,0 +1,75 @@
+#!/bin/bash
+kon="t"
+
+clear
+
+if [ "$1" = "-h" ]
+
+then cat help.txt | less
+
+else
+
+zapytanie="t"
+
+while [ "$zapytanie" = "t" ] || [ "$zapytanie" = "tak" ]
+do
+
+echo -e "\nTo jest ksiazka telefoniczna"
+
+echo "Co chcesz zrobic?"
+echo -e  "\t1. Dodaj kontakt"
+echo -e "\t2. Wyswietl dane"
+echo -e "\t3. Sortuj dane"
+echo -e "\t4. Wyswietl instrukcje"
+echo -e "\t5. Wyszukaj osobe"
+echo -e "\t6. Usuwanie wybranej osoby (lini)"
+echo -e  "\t0. Wyjdz z programu"
+echo "Podaj numer (0-6)"
+
+read numer
+
+case $numer in
+        1)
+                ./dodawanie_danych.sh
+                echo "czy chcesz kontynuowac?"
+        ;;
+
+        2)
+                cat dane.txt
+                echo "czy chcesz kontynuowac?"
+        ;;
+
+        3)
+                sort -d dane.txt
+                echo "czy chcesz kontynuowac?"
+        ;;
+
+        4)
+                cat help.txt
+                echo "czy chcesz kontynuowac?"
+        ;;
+
+        5)
+                ./szukanie_osoby.sh
+                echo "czy chcesz kontynuowac"
+        ;;
+
+        6)
+                ./usuwanie_lini.sh
+               echo "czy chcesz kontynuowac?"
+        ;;
+
+        0)
+                echo "dziekujemy za skorzystanie z ksiazki"
+
+        ;;
+
+        *)      echo "Zly znak"
+esac
+
+read zapytanie
+done
+
+fi
+
+
