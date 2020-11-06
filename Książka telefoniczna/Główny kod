@@ -31,32 +31,32 @@ read numer
 case $numer in
         1)
                 ./dodawanie_danych.sh
-                echo "czy chcesz kontynuowac?"
+                echo "czy chcesz kontynuowac (t/n)?"
         ;;
 
         2)
                 cat dane.txt
-                echo "czy chcesz kontynuowac?"
+                echo "czy chcesz kontynuowac (t/n)?"
         ;;
 
         3)
                 sort -d dane.txt
-                echo "czy chcesz kontynuowac?"
+                echo "czy chcesz kontynuowac (t/n)?"
         ;;
 
         4)
                 cat help.txt
-                echo "czy chcesz kontynuowac?"
+                echo "czy chcesz kontynuowac (t/n)?"
         ;;
 
         5)
                 ./szukanie_osoby.sh
-                echo "czy chcesz kontynuowac"
+                echo "czy chcesz kontynuowac (t/n)"
         ;;
 
         6)
                 ./usuwanie_lini.sh
-               echo "czy chcesz kontynuowac?"
+               echo "czy chcesz kontynuowac (t/n)?"
         ;;
 
         0)
