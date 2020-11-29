@@ -1,0 +1,50 @@
+
+
+#include<stdio.h>
+
+int main()
+{
+
+int i,j;
+int a,b;
+char koniec;
+
+do
+{
+printf("podaj dlugosc");
+scanf("%i", &a);
+
+printf("podaj szerokosc");
+scanf("%i", &b);
+
+for(j=1;j<=a;j++)
+{
+if(j%2 != 0)
+{
+
+        for (i=0;i<=b;i++)
+        {
+        printf("1 ");
+        printf("0 ");
+        i++;
+        }
+        printf("\n");
+}
+else
+{
+        for(i=0;i<=b;i++)
+        {
+        printf("0 ");
+        printf("1 ");
+        i++;
+        }
+        printf("\n");
+
+}
+}
+printf("konczymy?");
+scanf(" %c",&koniec);
+}
+while(koniec=='n');
+return 0;
+}
