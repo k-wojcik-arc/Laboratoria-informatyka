@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+
+float liczenie(float a1,float b1,float a2, float b2, float r1,float s2,float s1s2);
+void ify(float R,float r,float wynik);
+
+float a1,a2,b1,b2,r1,r2;
+float R,r,s1s2,s1,s2;
+
+int main()
+{
+float wynik;
+
+printf("Podaj wspolrzedne okregow oraz ich promienie");
+scanf("%f %f %f %f %f %f",&a1,&b1,&a2,&b2,&r1,&r2);
+
+wynik=liczenie(a1,b1,a2,b2,r1,s2,s1s2);
+
+R=r1+r2;
+r=abs(r1-r2);
+
+ify(R,r,wynik);
+return 0;
+}
+
+float liczenie(float a1,float b1,float a2, float b2, float r1,float s2,float s1s2)
+{
+s1=abs(a2-a1);
+s2=abs(b2-b1);
+
+return s1s2=sqrt((s1*s1)+(s2*s2));
+}
+void ify(float R,float r,float wynik)
+{
+if(wynik>R) printf("rozlaczne\n");
+if(wynik==R) printf("styczne\n");
+if(wynik==r) printf("styczne\n");
+if(wynik<R && wynik>r) printf("przecinaja sie\n");
+}
